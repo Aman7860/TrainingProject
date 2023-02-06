@@ -1,0 +1,41 @@
+<div class="main_content">
+    <div class="header">
+      <h3 class="page_top_title">Employees List</h3>
+      <div class="row">
+        <div class="col-md-6">
+        <p class="fw300">This page displays the available Employees in the website. </p>
+    </div>
+    <div class="col-md-6">
+    <div class="create-module-btn" style="float: right;">
+      <button type="button" (click)="CreateEmployee()" class="btn btn-outline-primary pull-right" >
+        <i class="fa fa-plus-circle theme-text"></i>&nbsp;&nbsp;Create Employee</button>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table id="usersclass" >
+            <thead>               
+                <th>SL No</th>
+                <th>User Name </th>
+                <th>Email</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>Action</th>
+           
+            </thead>
+            <tr *ngFor="let user of userlist , let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.contactNo}}</td>
+        <td>{{user.address}}</td>
+        <td> <span style="padding: 5px 20px;" (click)="toggleView('edit')"> Edit</span></td>
+            </tr>
+        </table>
+                </div>
+    </div>
+    </div>
+   
+  
+  </div>
