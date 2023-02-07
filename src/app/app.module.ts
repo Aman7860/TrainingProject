@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSortModule,
     MatTableModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

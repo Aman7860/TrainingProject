@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'Dasboard', component: DashboardComponent,    
     data: {  title: 'Dashboard Page'   }    
   }, 
-   {  path: '',     redirectTo: 'Dasboard',     pathMatch: 'full',   }  
+   {  path: '',     redirectTo: 'login',     pathMatch: 'full',   }  
 
    
   ];
