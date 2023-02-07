@@ -22,5 +22,8 @@ export class CreateemployeeComponent implements OnInit {
     this.router.navigate(['employeeslist']);
   }
 
+  logOut(){
+    this.router.navigate(['login']);
+  }
  
 }

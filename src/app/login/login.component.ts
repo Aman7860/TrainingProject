@@ -10,41 +10,51 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-   //Form Validables 
-   registerForm:any =  FormGroup;
-   submitted = false;
-   
-  constructor(private router:Router,
-    private LoginService:LoginService,
-    private formBuilder: FormBuilder
-    ) { }
-   
+  //Form Validables 
+  registerForm: any = FormGroup;
+  submitted = false;
 
-   //login form
-   ngOnInit(): void {
+  constructor(private router: Router,
+    private LoginService: LoginService,
+    private formBuilder: FormBuilder
+  ) { }
+
+
+  //login form
+  ngOnInit(): void {
     //login form
-   //Add User form validations
-   this.registerForm = this.formBuilder.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    //Add User form validations
+    this.registerForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
- //Add user form actions
+  //Add user form actions
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-    
+
     this.submitted = true;
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-        return;
+      return;
     }
-    //True if all the fields are filled
-    if(this.submitted)
-    {
-      alert("Great!!");
+    else {
+      let body = {
+        username: this.registerForm.value.username,
+        password: this.registerForm.value.password
+      }
+      console.log(body);
+      this.LoginService.loginUser(body).subscribe((response) => {
+        if(response.status="Success")
+        {
+          this.router.navigate(['employeeslist']);
+        }
+        alert(response.message)
+       console.log(response);
+      })
     }
-  
-  }  
+
+  }
 }
