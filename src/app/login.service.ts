@@ -31,4 +31,11 @@ export class LoginService {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     return this.http.post<Register[]>(createUrl, register, httpOptions)
   }
+
+  logout(model: any):Observable<any> {
+    let loginUrl = this.baseUrl + 'userlogout';
+    const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http.post<any>(loginUrl, model, { headers: this.header });
+  }
+
 }

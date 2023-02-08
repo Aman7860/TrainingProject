@@ -47,14 +47,33 @@ export class LoginComponent implements OnInit {
       }
       console.log(body);
       this.LoginService.loginUser(body).subscribe((response) => {
-        if(response.status="Success")
-        {
+        if (response.status = "Success") {
           this.router.navigate(['employeeslist']);
         }
         alert(response.message)
-       console.log(response);
+        console.log(response);
       })
     }
 
   }
+
+  logOut() {
+    let body = {
+      username: this.registerForm.value.username,
+      password: this.registerForm.value.password
+    }
+    this.LoginService.logout(body).subscribe((response) => {
+      if (response.status = "Success") {
+        this.router.navigate(['login']);
+      }
+      alert(response.message)
+      console.log(response);
+    })
+  }
+
+
+
+
+
 }
+
