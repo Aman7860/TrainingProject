@@ -57,21 +57,23 @@ export class LoginComponent implements OnInit {
 
   }
 
-  logOut() {
-    let body = {
-      username: this.registerForm.value.username,
-      password: this.registerForm.value.password
-    }
-    this.LoginService.logout(body).subscribe((response) => {
-      if (response.status = "Success") {
-        this.router.navigate(['login']);
-      }
-      alert(response.message)
-      console.log(response);
-    })
+  // logOut() {
+  //   let body = {
+  //     username: this.registerForm.value.username,
+  //     password: this.registerForm.value.password
+  //   }
+  //   this.LoginService.logout(body).subscribe((response) => {
+  //     if (response.status = "Success") {
+  //       this.router.navigate(['login']);
+  //     }
+  //     alert(response.message)
+  //     console.log(response);
+  //   })
+  // }
+
+  logOut(){
+    this.router.navigate(['login']);
   }
-
-
 
 
 
