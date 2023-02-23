@@ -1,10 +1,34 @@
-<div>  
-    <div class="row">  
-      <div class="col-sm-12" style="text-align: center;">  
-        <h3  >Welcome to DashBoard  </h3>  
-      </div>  
-      <div  class="col-sm-12">
-
+<div>
+  <div class="row">
+    <div class="col-sm-12" style="text-align: center;">
+      <div>
+        <img [src] = "image" alt="" style="height: 300px; width: 100%" class="center">
       </div>
-    </div>  
-  </div> 
+    </div>
+    <div class="col-sm-12">
+      <!--Interpolation Binding-->
+      <div class="center">{{title}}</div>
+      <h5>Interpolation Binding:--</h5>
+      <p>
+        Interpolation is a procedure that allows the user to bind a value to the user interface element. Interpolation binds the data one-way, which means that data moves in one direction from the components to HTML elements. 
+      </p>
+      <p>Property Binding:--</p>
+      <p>Property binding is a one-way data binding mechanism that allows you to set the properties for HTML elements. It involves updating a property value in the component and binding the value to an HTML element in the same view. We use property binding for toggle functionality and sharing data between components. It uses the "[]" syntax for data binding. </p>
+
+      <p>Event Binding:--</p>
+      <p>
+        Event binding type is when information flows from the view to the component when an event is triggered. The event could be a mouse click or keypress. The view sends the data to update the component. Unsurprisingly, it is the exact opposite of property binding, where the data goes from the component to the view.        
+      </p>
+    </div>
+    <div>
+      <button (click)="onclick()"> Button Click </button> <span style="color: green;">{{message}}
+      </span>    </div>
+  </div>
+  <div class="col-sm-12">
+<p>Two-way Data Binding:--</p>
+<p>As the name suggests, two-way binding is a mechanism where data flows from the component to the view and back. This binding ensures that the component and view are always in sync. Any changes made on either end are immediately reflected on both. The general syntax to denote two-way data binding is a combination of Square brackets and parentheses "[()]". </p>
+<br>
+<input  type="text" [(ngModel)]="random">  <span style="color: green;">{{random}}
+</span>  
+  </div>
+</div>
